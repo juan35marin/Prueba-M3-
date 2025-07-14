@@ -6,7 +6,7 @@ Email: juan35marin@gmail.com
 ID: 1017236274
 
 designed for an event organizer
-you can manage a series of events based on the availability of venues and attendees. .
+you can manage a series of events based on the availability of venues and attendees (I had a lot of problems with javascript, sorry for the little). 
 
 ---
 
