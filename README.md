@@ -29,7 +29,7 @@ Project-root/
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/juan35marin/Prueba-M3.git
+   git clone https://github.com/juan35marin/Prueba-M3-.git
    cd Prueba-M3
    ```
 2. Open `index.html` in your browser. You can navigate between the discs, see the description, about the author or contact.
