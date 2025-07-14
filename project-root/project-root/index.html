@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD Operations</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="Router.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <aside class="sidebar">
+        <h2><span class="logo-highlight"></span> Events</h2>
+        <div class="profile">
+          <img src="./500_333.jpeg" alt="Profile" />
+          <h3 id="username">Ramdom Guy</h3>
+          <span class="role">Admin</span>
+        </div>
+        <nav class="menu">
+
+          
+          <a href="#" class="active"
+            ><i class="fa-solid fa-graduation-cap"></i> Users</a
+          >
+
+        </nav>
+        <a href="#" class="logout" onclick="logout()">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i> Logout
+        </a>
+      </aside>
+
+      <main class="main-content">
+        <header>
+          
+          <div class="actions">
+           
+            <button class="add-btn" onclick="openModal()" id="addBtn">
+              ADD NEW EVENT
+            </button>
+          </div>
+        </header>
+
+        <div class="table">
+          <div class="table-header">
+            <span>Name</span>
+            <span>Description</span>
+            <span>Capacity</span>
+            <span>Date </span>
+
+          </div>
+          <div id="table-body"></div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2 id="modal-title">Add Event</h2>
+        <form id="event-form">
+          <input type="hidden" id="event-id" />
+          <input type="text" id="name" placeholder="Name" required />
+          <input type="email" id="email" placeholder="Email" required />
+          <input type="text" id="phone" placeholder="Phone" required />
+          <input type="text" id="enroll" placeholder="Enroll Number" required />
+          <input type="date" id="admission" required />
+          <button type="submit">Save</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js">
+      requireLogin();
+    </script>
+  </body>
+</html>

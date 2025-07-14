@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="login-body">
+    <div class="login-container">
+      <h2>Login</h2>
+      <form id="login-form">
+        <input type="text" id="username" placeholder="Usuario" required />
+        <input
+          type="password"
+          id="password"
+          placeholder="Contraseña"
+          required
+        />
+        <button type="submit">Entrar</button>
+        <p style="text-align: center">
+          <a href="register.html">¿No tienes cuenta? Regístrate</a>
+        </p>
+        <p id="error-msg" class="error-msg"></p>
+      </form>
+    </div>
+
+    <script>
+      const API = "http://localhost:3000/users";
+
+      document.getElementById("login-form").onsubmit = async (e) => {
+        e.preventDefault();
+
+        const username = document.getElementById("username").value.trim();
+        const password = document.getElementById("password").value;
+
+        const res = await fetch(
+          `${API}?username=${username}&password=${password}`
+        );
+        const users = await res.json();
+
+        if (users.length > 0) {
+          localStorage.setItem("session", JSON.stringify(users[0]));
+          window.location.href = "index.html";
+        } else {
+          document.getElementById("error-msg").textContent =
+            "Usuario o contraseña incorrectos.";
+        }
+      };
+    </script>
+  </body>
+</html>
